@@ -610,3 +610,49 @@ server.listen(4100, () => {
   console.log('Server running at http://localhost:3000/');
 });
 ```
+
+HTTP headers are key-value pairs sent by the server in the response or by the client in the request. They provide additional information about the request or the response, allowing the client and server to communicate various details. Here's an explanation of some common response headers:
+
+### 1. `Connection:`
+
+The `Connection` header indicates whether the connection should be kept open for further requests or closed after the current request-response cycle. 
+
+- `Connection: keep-alive`: The connection should be kept open for multiple requests.
+- `Connection: close`: The connection should be closed after the current request-response.
+
+### 2. `Content-Type:`
+
+The `Content-Type` header specifies the media type of the resource being sent. It informs the client how to interpret the content of the response.
+
+Example values:
+- `Content-Type: text/html`: The content is HTML.
+- `Content-Type: application/json`: The content is in JSON format.
+- `Content-Type: image/jpeg`: The content is an image in JPEG format.
+
+### 3. `Date:`
+
+The `Date` header indicates the date and time when the response was generated. It helps in understanding the freshness of the response.
+
+Example:
+```
+Date: Sat, 01 Jan 2023 12:00:00 GMT
+```
+
+### 4. `Keep-Alive:`
+
+The `Keep-Alive` header is used to allow the connection to be reused for multiple requests, instead of establishing a new connection for each request. It helps in reducing latency.
+
+- `Keep-Alive: timeout=5, max=1000`: Specifies that the connection can be kept alive for 5 seconds and can handle a maximum of 1000 requests.
+
+### 5. `Transfer-Encoding:`
+
+The `Transfer-Encoding` header indicates the form of encoding that has been applied to the message body. One common value is `chunked`, where the message body is sent in chunks.
+
+Example:
+```
+Transfer-Encoding: chunked
+```
+
+In chunked encoding, the body is divided into a series of chunks, each preceded by its size in hexadecimal followed by a newline and the chunk itself.
+
+These headers play a crucial role in defining the behavior and characteristics of the HTTP communication between the client and the server. They help in conveying metadata about the content, managing connections, and ensuring efficient and reliable communication.
