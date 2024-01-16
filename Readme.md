@@ -1838,3 +1838,265 @@ In Node.js, Bcrypt provides a secure and efficient way to hash passwords. It aut
 - **Ease of Use:** Bcrypt is user-friendly, making it easy to incorporate password hashing into your Node.js applications.
 
 Using Bcrypt for password hashing is considered a best practice in web development for securing user credentials. It addresses many of the common vulnerabilities associated with storing passwords and provides a solid foundation for authentication security in Node.js applications.
+
+
+## login and signup API with bcrypt
+
+```javascript
+//server.js
+const express = require('express');
+const app = express();
+app.use(express.json())
+
+// Import the routes module
+const routes = require('./UserRoute');
+
+// Use the routes module for the "/pages" path
+app.use('/pages', routes);
+
+app.listen(8800,()=>{
+    console.log("server is running fine")
+})
+```
+
+```javascript
+//userRouter()
+
+const express = require('express');
+const router = express.Router();
+const bcrypt = require('bcrypt')
+// const saltRound = 10;
+
+let arr = []
+router.post('/register',(req,res)=>{
+    const data = req.body
+    console.log(data)
+    // const randomvalue = bcrypt.genSaltSync(saltRound)
+    //     console.log(randomvalue,"generateSalt")
+
+    let account = arr.find(item=>item.email===loginData.email)
+    if(account){
+        return res.send("This email is already exist")
+    }
+    data.mobile = bcrypt.hashSync(data.mobile, 10);
+    // console.log(hashpass, "hashed password");
+    arr.push(data);
+    console.log(arr,"database")
+        return res.send("user is registered")
+    })
+
+router.post('/login',async(req,res)=>{
+    const loginData = req.body
+    // console.log(data)
+    let account = arr.find(item=>item.email===loginData.email)
+    console.log(account)
+    if(!account){
+        return  res.send("user is not registered")
+      }
+        const validate = await bcrypt.compare(loginData.mobile,account.mobile)
+        if(validate){
+           return res.send("user logged in ")
+        }
+        else{
+            return res.send("password is wrong")
+        }
+})
+
+module.exports = router
+```
+
+Authentication and authorization are two fundamental concepts in the field of security, particularly in the context of computer systems and applications.
+
+### Authentication:
+When we are talking about authentication then we say that if a
+person is providing his credential we will be checking if his credentials are correct
+or not or if he is already an existing user or not
+
+**Definition:**
+Authentication is the process of verifying the identity of a user, system, or entity. It is the mechanism by which a system validates the claimed identity of an entity, typically through the presentation of credentials such as usernames and passwords, biometric data, security tokens, or other authentication factors.
+
+**Purpose:**
+The primary goal of authentication is to ensure that the user or entity accessing a system is who they claim to be.
+
+**Key Components:**
+1. **Credentials:** Information provided by the user to prove their identity.
+2. **Authentication Factors:** Something the user knows (password), something the user has (security token), or something the user is (biometric data).
+
+### Authorization:
+When we are talking about authorization then we check that the
+user who has logged is having access for this specific data or not. For example,
+an Uber driver can not book the cab from the same account with which he has
+logged in Uber application as driver.
+
+**Definition:**
+Authorization is the process of granting or denying access to specific resources, functionalities, or actions based on the authenticated user's privileges and permissions. It is the mechanism that determines what actions a user or system is allowed to perform within a given system or application.
+
+**Purpose:**
+The primary goal of authorization is to control and restrict access to resources, ensuring that users have appropriate permissions to perform specific actions.
+
+**Key Components:**
+1. **Roles and Permissions:** Users are assigned roles, and roles are associated with specific permissions or access levels.
+2. **Access Control Lists (ACLs):** Lists that define what actions or operations a particular user or system is allowed or denied.
+
+### Differences:
+
+1. **Focus:**
+   - **Authentication:** Centers on verifying identity.
+   - **Authorization:** Centers on granting or denying access based on identity.
+
+2. **Goal:**
+   - **Authentication:** Ensures that a user is who they claim to be.
+   - **Authorization:** Controls what a user can or cannot do after authentication.
+
+3. **Process:**
+   - **Authentication:** Involves verifying identity through the presentation of credentials or other authentication factors.
+   - **Authorization:** Involves determining what actions or resources a user is allowed to access based on their authenticated identity.
+
+4. **Key Components:**
+   - **Authentication:** Credentials, authentication factors.
+   - **Authorization:** Roles, permissions, access control lists.
+
+5. **Timing:**
+   - **Authentication:** Typically occurs first in the user access process.
+   - **Authorization:** Occurs after authentication and is dependent on the authenticated user's identity.
+
+6. **Example:**
+   - **Authentication:** Verifying a user's username and password during login.
+   - **Authorization:** Determining whether a user has the permission to delete a file after successful authentication.
+
+### Relationship:
+
+Authentication and authorization work hand in hand in the context of user access control. After a user is authenticated (proven to be who they claim to be), the system then uses authorization mechanisms to determine what that authenticated user is allowed to do or access.
+
+
+
+### What is JSON Web Token (JWT)?
+
+A JSON Web Token (JWT) is a compact, URL-safe means of representing claims between two parties. These claims are typically used for authentication and authorization purposes. JWTs are commonly used in web development to securely transmit information between parties, especially between a client and a server.
+
+JWTs are mainly used for authentication. After a user signs in to an application, the application then assigns JWT to that user. Subsequent requests by the user will include the assigned JWT. This token tells the server what routes, services, and resources the user is allowed to access.
+
+### Advantages of Node.js Authentication with JWT:
+
+1. **Stateless Authentication:**
+   - JWTs enable stateless authentication, meaning the server doesn't need to store the user's session information. This makes it easier to scale applications horizontally.
+
+2. **Cross-Domain Authorization:**
+   - JWTs can be used across different domains, making them suitable for microservices architectures and distributed systems.
+
+3. **Security:**
+   - JWTs can be signed and optionally encrypted, providing a secure way to transmit data between parties. The signature ensures data integrity, and encryption adds an extra layer of confidentiality.
+
+4. **Reduced Database Load:**
+   - Since JWTs are self-contained and include necessary information, there's no need to query the database for user information on every request. This reduces the load on the database.
+
+5. **Flexibility:**
+   - JWTs are flexible and can include custom claims, allowing developers to encode additional information beyond standard user authentication details.
+
+6. **Efficient Communication:**
+   - Being compact and URL-safe, JWTs are efficient for transmitting information over the network. They are commonly used in HTTP headers or query parameters.
+
+### The Need for JSON Web Token:
+
+The need for JWT arises from challenges associated with traditional session-based authentication:
+
+1. **Statelessness:**
+   - HTTP is a stateless protocol, and maintaining user sessions traditionally requires server-side storage or database queries. JWTs allow stateless authentication by encoding user information directly into the token.
+
+2. **Cross-Domain Communication:**
+   - Cookies, traditionally used for session management, have domain restrictions. JWTs can be used across different domains, making them suitable for modern web applications with separate frontend and backend servers.
+
+3. **Scalability:**
+   - Stateless authentication is crucial for horizontal scalability. As applications grow, stateless solutions like JWTs make it easier to distribute authentication responsibilities.
+
+### Structure of a JWT:
+
+A JWT consists of three parts: a header, a payload, and a signature. These parts are base64-encoded and concatenated with periods (`.`) to form the final JWT.
+
+1. **Header:**
+   - Contains information about the type of token and the signing algorithm used. Example:
+     ```json
+     {
+       "alg": "HS256",
+       "typ": "JWT"
+     }
+     ```
+
+2. **Payload:**
+   - Contains claims. Claims are statements about an entity (typically, the user) and additional metadata. Example:
+     ```json
+     {
+       "sub": "1234567890",
+       "name": "John Doe",
+       "iat": 1516239022
+     }
+     ```
+
+3. **Signature:**
+   - Created by combining the encoded header, encoded payload, and a secret. The signature ensures the integrity of the token. Example:
+     ```
+     HMACSHA256(
+       base64UrlEncode(header) + "." +
+       base64UrlEncode(payload),
+       secret
+     )
+     ```
+
+### JWT Use Cases:
+
+1. **Authentication:**
+   - JWTs are widely used for user authentication. After a user logs in, the server generates a JWT containing user information. The client includes this JWT in subsequent requests to access protected resources.
+
+2. **Single Sign-On (SSO):**
+   - JWTs facilitate single sign-on across multiple services. Once a user authenticates with one service and receives a JWT, they can use it to access other services without re-authenticating.
+
+3. **Information Exchange:**
+   - JWTs are suitable for securely transmitting information between parties. They are often used in authorization and access control scenarios.
+
+4. **Stateless Sessions:**
+   - JWTs can represent session information, allowing for stateless sessions without the need for server-side storage.
+
+5. **Secure Data Exchange:**
+   - JWTs can be used to securely transmit data between a client and a server. The signature ensures that the data hasn't been tampered with during transmission.
+
+In summary, JSON Web Tokens provide a versatile and secure way to transmit information, especially for authentication and authorization purposes in web development. Their compact and self-contained nature makes them well-suited for modern, distributed architectures.
+
+
+
+
+```javascript
+
+
+import React, { useEffect, useState } from 'react';
+import { createContext } from 'react';
+import axios from 'axios';
+
+export const dataStore = createContext();
+
+const CntxtAPI = (props) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/blog'); // Replace with your backend API URL
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <dataStore.Provider value={data}>
+      {props.children}
+    </dataStore.Provider>
+  );
+};
+
+export default CntxtAPI;
+```
+
+
