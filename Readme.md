@@ -2586,3 +2586,379 @@ export default CntxtAPI;
 ```
 
 
+
+#  MONGODB
+
+
+## DATA
+
+Data is a collection of a distinct small unit of information. It can be used in a variety of forms like text, numbers, media, bytes, etc. it can be stored in pieces of paper or electronic memory, etc.
+
+Word 'Data' is originated from the word 'datum' that means 'single piece of information.' It is plural of the word datum.
+
+In computing, Data is information that can be translated into a form for efficient movement and processing. Data is interchangeable.
+
+## DATABASE
+
+
+
+
+Absolutely, let's go through the topics for Day 1:
+
+### 1. Introduction to Databases (DB):
+
+#### What is a Database?
+- A database is a structured set of data organized for efficient retrieval and manipulation.
+Database handlers create a database in such a way that only one set of software program provides access of data to all the users.
+
+- The main purpose of the database is to operate a large amount of information by storing, retrieving, and managing data.
+
+- There are many dynamic websites on the World Wide Web nowadays which are handled through databases. For example, a model that checks the availability of rooms in a hotel. It is an example of a dynamic website that uses a database.
+
+- There are many databases available like MySQL, Sybase, Oracle, MongoDB, Informix, PostgreSQL, SQL Server, etc.
+
+### Relational Database
+1970 - Present: It is the era of Relational Database and Database Management. In 1970, the relational model was proposed by E.F. Codd.
+
+Relational database model has two main terminologies called instance and schema.
+
+The instance is a table with rows or columns
+
+Schema specifies the structure like name of the relation, type of each column and name.
+
+### Cloud database
+Cloud database facilitates you to store, manage, and retrieve their structured, unstructured data via a cloud platform. This data is accessible over the Internet. Cloud databases are also called a database as service (DBaaS) because they are offered as a managed service.
+
+Some best cloud options are:
+
+AWS (Amazon Web Services)
+Snowflake Computing
+Oracle Database Cloud Services
+Microsoft SQL server
+Google cloud spanner
+
+#### Advantages of cloud database
+
+Lower costs:
+Generally, company provider does not have to invest in databases. It can maintain and support one or more data centers.
+
+Automated:
+Cloud databases are enriched with a variety of automated processes such as recovery, failover, and auto-scaling.
+
+Increased accessibility:
+You can access your cloud-based database from any location, anytime. All you need is just an internet connection.
+
+A database is usually controlled by a DBMS.
+DBMS stands for the database management system.
+
+### DBMS (Data Base Management System)
+Database management System is software which is used to store and retrieve the database. For example, Oracle, MySQL, etc.; these are some popular DBMS tools.
+
+- DBMS provides the interface to perform the various operations like creation, deletion, modification, etc.
+- DBMS allows the user to create their databases as per their requirement.
+- DBMS accepts the request from the application and provides specific data through the operating system.
+- DBMS contains the group of programs which acts according to the user instruction.
+- It provides security to the database.
+
+#### Advantage of DBMS
+a. Controls redundancy
+
+It stores all the data in a single database file, so it can control data redundancy.
+
+b. Data sharing
+
+An authorized user can share the data among multiple users.
+
+c. Backup
+
+It providesBackup and recovery subsystem. This recovery system creates automatic data from system failure and restores data if required.
+
+d. Multiple user interfaces
+
+It provides a different type of user interfaces like GUI, application interfaces.
+
+#### Disadvantage of DBMS
+Size:
+
+It occupies large disk space and large memory to run efficiently.
+
+Cost:
+
+DBMS requires a high-speed data processor and larger memory to run DBMS software, so it is costly.
+
+Complexity:
+
+DBMS creates additional complexity and requirements.
+
+
+![DBMS](https://assets-global.website-files.com/6130fa1501794e37c21867cf/632debee3bff316b1ad29cdf_Database%20Management%20System.png)
+
+![dbms](https://www.deepakbhatt.in/wp-content/uploads/2022/03/What-is-DATA-DBMS-Database-System-Complete-Information.jpg)
+
+![db](https://forum.huawei.com/enterprise/api/file/v1/small/thread/667933143396651008.png?appid=esc_en)
+## RDBMS (Relational Database Management System)
+The word RDBMS is termed as 'Relational Database Management System.' It is represented as a table that contains rows and column.
+
+RDBMS is based on the Relational model; it was introduced by E. F. Codd.
+
+A relational database contains the following components:
+
+Table
+Record/ Tuple
+Field/Column name /Attribute
+Instance
+Schema
+Keys
+An RDBMS is a tabular DBMS that maintains the security, integrity, accuracy, and consistency of the data.
+
+
+
+### Basic Operations
+1. Insert: To insert a single document, use db.collection.insertOne(). For inserting multiple documents, use db.collection.insertMany().
+2. Find: Fetch documents from a collection using db.collection.find(), and filter the results with query criteria like {field: value}. To fetch only one document, use db.collection.findOne().
+3. Update: Update fields or entire documents by using update operators like $set and $unset with db.collection.updateOne() or db.collection.updateMany().
+4. Delete: Remove documents from a collection using db.collection.deleteOne() or db.collection.deleteMany() with query criteria.
+5. Drop: Permanently delete a collection or a database using db.collection.drop() and db.dropDatabase().
+
+####  Databases are widely divided into two major types as:-
+
+Relational or Sequence Databases or SQL database.[SQL: Structured Quesry Language]
+
+Non-relational or Non-sequence databases or No SQL databases.
+
+- MongoDB is a popular NoSQL database system that stores data in Flexible JSON-like documents, making it suitable for working with large scale and unstructured data.
+
+
+
+![client server architechture](https://docs.faircom.com/doc/ctserver/clientserver.gif)
+
+![advanced client server architechture](https://cdn-images-1.medium.com/max/1080/1*SBH_Y5t32ixv8C_F1MVYzA.png)
+
+
+- A content delivery network (CDN) is a geographically distributed group of servers that caches content close to end users. A CDN allows for the quick transfer of assets needed for loading Internet content, including HTML pages, JavaScript files, stylesheets, images, and videos
+
+- Load balancing in cloud computing distributes traffic and workloads to ensure that no single server or machine is under-loaded, overloaded, or idle. Load balancing optimizes various constrained parameters such as execution time, response time, and system stability to improve overall cloud performance.
+
+![CDN](https://cdn.shopify.com/s/files/1/0070/7032/files/What_is_a_CDN.png?format=jpg&quality=90&v=1677446022)
+
+## SQL vs NoSQL
+When discussing databases, it’s essential to understand the difference between SQL and NoSQL databases, as each has its own set of advantages and limitations. In this section, we’ll briefly compare and contrast the two, so you can determine which one suits your needs better.
+
+`**A database schema**` is considered the “blueprint” of a database which describes how the data may relate to other tables or other data models. 
+or
+A database schema refers to the logical and visual configuration of the entire relational database. The database objects are often grouped and displayed as tables, functions, and relations. A schema describes the organization and storage of data in a database and defines the relationship between various tables.
+
+### SQL Databases
+
+SQL (Structured Query Language) databases are also known as relational databases,used for managing and manipulating relational databases. They have a predefined schema, and data is stored in tables consisting of rows and columns. SQL databases follow the ACID (Atomicity, Consistency, Isolation, Durability) properties to ensure reliable transactions. Some popular SQL databases include MySQL, PostgreSQL, and Microsoft SQL Server.
+
+#### Advantages of SQL databases:
+
+- Predefined schema: Ideal for applications with a fixed structure.
+- ACID transactions: Ensures data consistency and reliability.
+- Support for complex queries: Rich SQL queries can handle complex data relationships and aggregation operations.
+- Scalability: Vertical scaling by adding more resources to the server (e.g., RAM, CPU).
+
+#### Limitations of SQL databases:
+
+Rigid schema: Data structure updates are time-consuming and can lead to downtime.
+Scaling: Difficulties in horizontal scaling and sharding of data across multiple servers.
+Not well-suited for hierarchical data: Requires multiple tables and JOINs to model tree-like structures.
+
+
+### NoSQL Databases
+NoSQL (Not only SQL) databases refer to non-relational databases, which don’t follow a fixed schema for data storage. Instead, they use a flexible and semi-structured format like JSON documents, key-value pairs, or graphs. MongoDB, Cassandra, Redis, and Couchbase are some popular NoSQL databases.
+
+#### Advantages of NoSQL databases:
+
+Flexible schema: Easily adapts to changes without disrupting the application.
+Scalability: Horizontal scaling by partitioning data across multiple servers (sharding).
+Fast: Designed for faster read and writes, often with a simpler query language.
+Handling large volumes of data: Better suited to managing big data and real-time applications.
+Support for various data structures: Different NoSQL databases cater to various needs, like document, graph, or key-value stores.
+
+#### Limitations of NoSQL databases:
+
+Limited query capabilities: Some NoSQL databases lack complex query and aggregation support or use specific query languages.
+Weaker consistency: Many NoSQL databases follow the BASE (Basically Available, Soft state, Eventual consistency) properties that provide weaker consistency guarantees than ACID-compliant databases.
+MongoDB: A NoSQL Database
+This guide focuses on MongoDB, a popular NoSQL database that uses a document-based data model. MongoDB has been designed with flexibility, performance, and scalability in mind. With its JSON-like data format (BSON) and powerful querying capabilities, MongoDB is an excellent choice for modern applications dealing with diverse and large-scale data.
+
+
+
+#### Common SQL Commands:
+- **SELECT:** Retrieve data from a table.
+- **INSERT:** Insert new data into a table.
+- **UPDATE:** Modify existing data in a table.
+- **DELETE:** Remove data from a table.
+- **CREATE:** Create a new table, database, or index.
+- **ALTER:** Modify the structure of a table.
+- **DROP:** Delete a table, database, or index.
+
+### 3. SQL vs NoSQL:
+They both are used to connect the database but the differnce is that in the SQL we are storing our data/information in the sequence wise where we store the data inside the table row and column.
+
+and with each row we are representing a unique record and each column representing a specific data field.
+
+and the NoSQL was creadted with the large data collection in the database and they are versatile because they can store the data/information in the form of the unstructured manner or semi-structured manner.It is not limited to storing the data in the tables.
+
+Where as SQL supports the predefined schemas,making the storage of the data to structured type only. BUT NoSQL supports the dynamic schemas to store the different different forms of data.
+
+
+![mongodb](https://images.idgesg.net/images/article/2021/06/document-store-100893897-large.jpg?auto=webp&quality=85,70)
+### 4. Introduction to MongoDB:
+MongoDB is an open-source, document-based, and cross-platform NoSQL database that offers high performance, high availability, and easy scalability. It differs from traditional relational databases by utilizing a flexible, schema-less data model built on top of BSON (Binary JSON), allowing for non-structured data to be easily stored and queried.
+
+### MongoDB is a suitable choice for various applications, including:
+
+1. Big Data: MongoDB’s flexible data model and horizontal scalability make it a great fit for managing large volumes of unstructured or semi-structured data.
+
+2. Real-time analytics: MongoDB’s aggregation framework and indexing capabilities help analyze and process data in real-time.
+
+3. Content management: With its dynamic schema, MongoDB can handle diverse content types, making it a suitable choice for content management systems.
+
+4. Internet of Things (IoT) applications: MongoDB can capture and store data from a large number of devices and sensors, proving beneficial in IoT scenarios.
+
+5. Mobile applications: MongoDB provides a flexible data model, which is an essential requirement for the dynamic nature and varying data types of mobile applications.
+
+In conclusion, MongoDB is a powerful and versatile NoSQL database that can efficiently handle unstructured and semi-structured data, making it an excellent choice for various applications and industries.
+
+### When to use MongoDB
+MongoDB is an ideal database solution in various scenarios. Let’s discuss some of the key situations when you should consider using MongoDB.
+
+1. Handling Large Volumes of Data:
+When dealing with large amounts of data that may require extensive read and write operations, MongoDB is an excellent choice due to its high performance and horizontal scaling. By leveraging replication and sharding, you can distribute data across multiple servers, reducing the workload on a single machine.
+
+2. Flexible Schema
+If your application requires a flexible data model that allows for changes in the data structure over time, MongoDB is a suitable choice. This flexibility comes from its document-based structure, which allows developers to store any JSON-like data without the need to define the schema beforehand.
+
+3. High Availability
+MongoDB’s built-in replication feature allows you to create multiple copies of your data, ensuring high availability and fault tolerance. This means your application will remain accessible in the event of hardware failure or data center outages.
+
+4. Real-Time Analytics & Reporting
+MongoDB offers excellent support for real-time analytics and reporting. With its aggregation pipeline and map-reduce functionality, you can extract valuable insights from your data and perform complex data manipulations easily.
+
+5. Geo-spatial Queries
+If your application deals with location-based data, MongoDB provides built-in support for geospatial indexing and querying. This makes it easier to work with location-based services and applications, such as GPS tracking or location-based search features.
+
+6. Rapid Application Development
+Due to its flexibility and ease of use, MongoDB is a good choice for startups and agile development teams that require quick iterations and frequent schema changes. It allows developers to focus on implementing features without the burden of managing rigid database structures.
+
+
+
+#### MongoDB Basics:
+- **Collections:** Equivalent to tables in SQL, where each collection contains documents.
+- **Documents:** BSON (Binary JSON) format, similar to JSON objects.
+- **Embedded Documents:** Documents inside other documents.
+- **Embedded Arrays:** Arrays of documents within a document.
+- **How Data is Stored:** MongoDB stores data in a flexible, JSON-like format, allowing dynamic schemas.
+
+### 5. Installation of MongoDB:
+
+#### Steps for Local Installation:
+1. **Download MongoDB:**
+   - Visit the [official MongoDB download page](https://www.mongodb.com/try/download/community) and download the version suitable for your operating system.
+
+2. **Install MongoDB:**
+   - Follow the installation instructions for your OS.
+
+3. **Run MongoDB:**
+   - Start the MongoDB server.
+
+   ```bash
+   mongod
+   ```
+
+4. **Connect to MongoDB:**
+   - Open a new terminal window and connect to the MongoDB server.
+
+   ```bash
+   mongo
+   ```
+
+## MongoDB Terminology
+
+Database: Stores all your collections within a MongoDB instance.
+Collection: A group of related documents, similar to a table in a relational database.
+Document: A single record within a collection, which is stored as BSON (Binary JSON) format.
+Field: A key-value pair within a document.
+_id: A unique identifier automatically generated for each document within a collection.
+
+This section of the guide will introduce you to the basic terminology used while working with MongoDB. Understanding these terms will help you to grasp the fundamentals of MongoDB and make it easier for you to follow along with the rest of the guide.
+
+Database: A MongoDB database is used to store and manage a set of collections. It consists of various collections, indexes, and other essential data structures required to store the data efficiently.
+
+Collection: A collection in MongoDB is a group of documents. The name of a collection must be unique within its database. Collections can be viewed as the table equivalencies in a relational database.
+
+Document: A document is a record in a MongoDB collection. It is comprised of a set of fields, similar to a row in a relational database. However, unlike tables in a relational database, no schema or specific structure is enforced on the documents within a collection.
+
+Field: A field in MongoDB is a key-value pair inside a document. It can store various types of data, including strings, numbers, arrays, and other documents. Fields in MongoDB can be seen as columns in a relational database.
+
+Index: Indexes in MongoDB are data structures that improve the speed of common search operations. They store a small portion of the dataset in a well-organized structure. This structure allows MongoDB to search and sort documents faster by reducing the number of documents it has to scan.
+
+Query: A query in MongoDB is used to retrieve data from the database. It retrieves specific documents or subsets of documents from a collection based on a given condition.
+
+Cursor: A cursor is a pointer to the result set of a query. It allows developers to process individual documents from the result set in an efficient manner.
+
+Aggregation: Aggregation in MongoDB is the process of summarizing and transforming the data stored in collections. It is used to run complex analytical operations on the dataset or create summary reports.
+
+Replica Set: A replica set in MongoDB is a group of mongodb instances that maintain the same data set. It provides redundancy, high availability, and automatic failover in case the primary node becomes unreachable.
+
+Sharding: Sharding is a method of distributing data across multiple machines. It is used in MongoDB to horizontally scale the database by partitioning the dataset into smaller, more manageable chunks called shards.
+
+
+### BSON vs JSON
+In MongoDB, data is stored in a binary format called BSON (Binary JSON), which is a superset of JSON (JavaScript Object Notation). While both BSON and JSON are used to represent data in MongoDB, they have some key differences.
+
+While BSON and JSON are related, they serve different purposes in the context of MongoDB:
+
+BSON is the binary format used by MongoDB to store and retrieve data efficiently with support for additional native data types.
+JSON, being a more human-readable and widely used format, is typically used for data interchange between MongoDB and applications.JSON is a lightweight and human-readable data representation format that can be easily parsed and generated by many programming languages. It is used widely as a medium for transmitting data over the web
+
+
+
+
+
+
+
+## 6. MongoDB Deployment using MongoDB Atlas:
+
+### What is MongoDB Atlas?
+ MongoDB Atlas is a cloud-based database service provided by MongoDB.
+MongoDB Atlas is a fully managed cloud-based database service built and maintained by MongoDB. The Atlas platform is available on major cloud providers like AWS, Azure, and Google Cloud Platform, allowing developers to deploy, manage, and scale their MongoDB clusters in a seamless and efficient manner.
+
+### #Some of the standout features and benefits of MongoDB Atlas include:
+
+1. Database as a Service (DBaaS): MongoDB Atlas takes care of database-related operations like backups, monitoring, scaling, and security, allowing developers to focus on their application logic.
+
+2. Global Cluster Support: Atlas enables the creation of globally distributed clusters. Data can be stored and replicated across multiple geographies for improved performance, high availability, and reduced latency.
+
+3. Security: Atlas offers built-in security features, such as end-to-end encryption, role-based access control, and IP whitelisting. This ensures your data remains secure and compliant with industry standards.
+
+4. Performance: MongoDB Atlas provides tools for monitoring and optimizing the performance of your database. Advanced features like performance advisor and index suggestions help keep your database running at optimal speed.
+
+5. Easy Scaling: With Atlas, you can easily scale your cluster either vertically or horizontally, depending on your requirements. Atlas supports auto-scaling of both storage and compute resources.
+
+6. Data Automation and Integration: Atlas allows seamless integration with other services, like BI tools and serverless functions. The platform also supports easy data migration from on-premises or cloud-based deployments.
+
+To summarize, MongoDB Atlas is a powerful and versatile database service that simplifies and enhances the process of deploying, managing, and scaling MongoDB instances in the cloud. With its robust set of features and security capabilities, Atlas is an ideal choice for developers who want to build and maintain scalable and efficient applications using MongoDB.
+
+#### Steps for MongoDB Atlas Deployment:
+1. **Sign Up:**
+   - Create an account on the [MongoDB Atlas website](https://www.mongodb.com/cloud/atlas/register).
+
+2. **Create a New Cluster:**
+   - Follow the steps to create a new MongoDB cluster.
+
+3. **Configure Security:**
+   - Set up security measures like IP Whitelisting and database users.
+
+4. **Connect to Cluster:**
+   - Connect to your MongoDB Atlas cluster using the connection string provided.
+
+   ```bash
+   mongo "mongodb+srv://<username>:<password>@cluster0.mongodb.net/test" --username <username>
+   ```
+
+### Conclusion:
+This Day 1 overview introduces you to the fundamentals of databases, compares SQL and NoSQL databases, provides an introduction to MongoDB, guides you through the installation of MongoDB locally, and introduces MongoDB Atlas for cloud deployment. Next, we can delve deeper into specific MongoDB concepts or proceed to practical examples based on your preference.
