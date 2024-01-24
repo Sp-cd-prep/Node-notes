@@ -2918,6 +2918,143 @@ JSON, being a more human-readable and widely used format, is typically used for 
 
 
 
+### MongoDB Shell Query Examples:
+
+#### 1. **Insert Documents:**
+
+```javascript
+// Insert a single document into the "users" collection
+db.users.insert({ name: "John Doe", age: 25, city: "New York" });
+
+// Insert multiple documents into the "users" collection
+db.users.insertMany([
+  { name: "Alice", age: 30, city: "San Francisco" },
+  { name: "Bob", age: 35, city: "Los Angeles" }
+]);
+```
+
+#### 2. **Find Documents:**
+
+```javascript
+// Retrieve all documents from the "users" collection
+db.users.find();
+
+// Pretty print the result
+db.users.find().pretty();
+```
+
+#### 3. **Query with Conditions:**
+
+```javascript
+// Find users older than 30
+db.users.find({ age: { $gt: 30 } });
+
+// Find users in a specific city
+db.users.find({ city: "New York" });
+
+// Find users between the ages of 25 and 35
+db.users.find({ age: { $gte: 25, $lte: 35 } });
+```
+
+#### 4. **Update Documents:**
+
+```javascript
+// Update the age of a specific user
+db.users.update({ name: "John Doe" }, { $set: { age: 26 } });
+
+// Update multiple documents that match a condition
+db.users.update({ city: "San Francisco" }, { $set: { age: 31 } }, { multi: true });
+```
+
+#### 5. **Delete Documents:**
+
+```javascript
+// Delete a specific user
+db.users.remove({ name: "Alice" });
+
+// Delete all users in a specific city
+db.users.remove({ city: "Los Angeles" });
+```
+
+#### 6. **Aggregation:**
+
+```javascript
+// Aggregate total sales by product
+db.sales.aggregate([
+  { $group: { _id: "$product", totalSales: { $sum: "$quantity" } } }
+]);
+```
+
+#### 7. **Indexing:**
+
+```javascript
+// Create an index on the "email" field
+db.users.createIndex({ email: 1 });
+```
+
+#### 8. **Sorting:**
+
+```javascript
+// Sort users by age in ascending order
+db.users.find().sort({ age: 1 });
+
+// Sort users by age in descending order
+db.users.find().sort({ age: -1 });
+```
+
+#### 9. **Limit and Skip:**
+
+```javascript
+// Limit the number of results to 3
+db.users.find().limit(3);
+
+// Skip the first 2 results and limit to 2
+db.users.find().skip(2).limit(2);
+```
+
+### Conclusion:
+
+These examples cover some of the basic MongoDB shell queries, including document insertion, retrieval, updating, and deletion. Additionally, we explored aggregation, indexing, sorting, and limiting results. MongoDB's flexible query language allows you to express a wide range of conditions and operations to manipulate and retrieve data. If you have specific scenarios or queries you'd like to explore further, feel free to let me know!
+
+
+
+
+
+Sure, here are the MongoDB shell commands to perform the tasks you've mentioned:
+
+```javascript
+// Connect to MongoDB and switch to the Human_Resource database
+use Human_Resource
+
+// Task 1: Create a collection named "employee" in the Human_Resource database
+db.createCollection("employee")
+
+// Task 2: Query and list all documents in the "employee" collection
+db.employee.find()
+
+// Task 3: Query and list employees with salary more than 30000
+db.employee.find({ "salary": { $gt: "30000" } })
+
+// Task 4: Query and list employees with experience more than 2 years
+db.employee.find({ "overallExp": { $gt: "2" } })
+
+// Task 5: Query and list employees graduated after 2015 and with experience more than 1 year
+db.employee.find({ "yearGrad": { $gt: "2015" }, "overallExp": { $gt: "1" } })
+
+// Task 6: Update the salary of employees with salary greater than 70000 to 65000
+db.employee.updateMany({ "salary": { $gt: "70000" } }, { $set: { "salary": "65000" } })
+
+// Task 7: Delete all documents where last company is Y
+db.employee.deleteMany({ "lastCompany": "Y" })
+```
+
+Please note that these commands assume that the "employee" collection is already populated with the provided data. Also, make sure to replace the collection and field names with the actual names used in your MongoDB database.
+
+
+
+
+
+
 
 
 
