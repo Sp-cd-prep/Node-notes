@@ -2919,6 +2919,113 @@ JSON, being a more human-readable and widely used format, is typically used for 
 
 
 ### MongoDB Shell Query Examples:
+The MongoDB Shell is an interactive JavaScript interface to MongoDB, allowing you to interact with the database directly. It's a command-line tool that facilitates the execution of various operations on MongoDB databases.
+
+### MongoDB Query Operators and Methods:
+
+#### 1. **`$gt`: Greater Than Operator**
+
+- **Full Form:** `$gt` stands for "Greater Than."
+
+- **Example Query:**
+  ```javascript
+  // Find users older than 30
+  db.users.find({ age: { $gt: 30 } });
+  ```
+
+#### 2. **`$lt`: Less Than Operator**
+
+- **Full Form:** `$lt` stands for "Less Than."
+
+- **Example Query:**
+  ```javascript
+  // Find users younger than 25
+  db.users.find({ age: { $lt: 25 } });
+  ```
+
+#### 3. **`$gte`: Greater Than or Equal To Operator**
+
+- **Full Form:** `$gte` stands for "Greater Than or Equal To."
+
+- **Example Query:**
+  ```javascript
+  // Find users aged 25 and older
+  db.users.find({ age: { $gte: 25 } });
+  ```
+
+#### 4. **`$lte`: Less Than or Equal To Operator**
+
+- **Full Form:** `$lte` stands for "Less Than or Equal To."
+
+- **Example Query:**
+  ```javascript
+  // Find users aged 35 and younger
+  db.users.find({ age: { $lte: 35 } });
+  ```
+
+#### 5. **`$set`: Set Field Value Operator**
+
+- **Full Form:** `$set` is a method used in an update operation to set the value of a field.
+
+- **Example Query:**
+  ```javascript
+  // Update the age of a specific user to 26
+  db.users.update({ name: "John Doe" }, { $set: { age: 26 } });
+  ```
+
+#### 6. **`$unset`: Unset Field Operator**
+
+- **Full Form:** `$unset` is a method used in an update operation to remove a field.
+
+- **Example Query:**
+  ```javascript
+  // Remove the "city" field from a specific user
+  db.users.update({ name: "John Doe" }, { $unset: { city: 1 } });
+  ```
+
+#### 7. **`$inc`: Increment Field Value Operator**
+
+- **Full Form:** `$inc` is a method used in an update operation to increment the value of a field.
+
+- **Example Query:**
+  ```javascript
+  // Increment the age of a specific user by 1
+  db.users.update({ name: "John Doe" }, { $inc: { age: 1 } });
+  ```
+
+#### 8. **`$push`: Push Element to Array Operator**
+
+- **Full Form:** `$push` is a method used in an update operation to add an element to an array.
+
+- **Example Query:**
+  ```javascript
+  // Add a new book to the "books" array of a specific author
+  db.authors.update({ name: "Jane Smith" }, { $push: { books: { title: "New Book", genre: "Mystery" } } });
+  ```
+
+#### 9. **`$pull`: Pull Element from Array Operator**
+
+- **Full Form:** `$pull` is a method used in an update operation to remove an element from an array.
+
+- **Example Query:**
+  ```javascript
+  // Remove a specific tag from the "tags" array of a blog post
+  db.posts.update({ title: "MongoDB Basics" }, { $pull: { tags: "outdated" } });
+  ```
+
+#### 10. **`$rename`: Rename Field Operator**
+
+- **Full Form:** `$rename` is a method used in an update operation to rename a field.
+
+- **Example Query:**
+  ```javascript
+  // Rename the "oldField" to "newField" in a specific document
+  db.collection.update({ /* some condition */ }, { $rename: { "oldField": "newField" } });
+  ```
+
+### Conclusion:
+
+Understanding these MongoDB operators and methods allows you to construct powerful queries and updates. These examples cover a range of scenarios, from simple comparisons to array manipulations. If you have specific use cases or scenarios you'd like to explore further, feel free to let me know!
 
 #### 1. **Insert Documents:**
 
