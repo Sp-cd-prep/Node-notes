@@ -1,4 +1,102 @@
-# NodeJS
+# NodeJS Note
+
+1. Node Introduction
+    * What is React
+    * Need for NodeJS
+    * Blocking and Non-blocking operetion
+    * [Modules](#Modules) 
+      * FS Module
+2. Node Foundation
+    * Creating a simple server 
+    * HTTP Status Code
+    * [HTTP Requests](#HTTP-Requests)
+    * Components
+    * [Class Components](#class-components)
+    * Functional component
+    * Named and default export
+    * Communiny support
+    * Web and mobile
+
+3. Class and functional component
+    * Components and props
+    * Is there any reason to still use react class components?
+    * Functional components vs class components in react
+    * Migrate class components to functional components with Hooks in react
+
+4. State and Props
+    * How to use props 
+    * Pass props in both class and functional component
+    * How to update state from props
+    * How to pass data from parent to child and vice versa
+    * Putting props to usestate
+
+5. Conditional rendering
+    * How to perform
+    * Different techniques for conditional rendering
+
+6. Rendering
+    * [Life Cycle Methods](#life-cycle-methods)
+
+           @Mounting
+              constructor()
+              render()
+              componentDidMount()
+           @Updating
+              shouldComponentUpdate()
+              render()
+              componentDidUpdate()
+           @Unmounting
+              componentWillUnmount()
+
+7. Lists and keys
+      * List components in react 
+      * Why do we need the key props"
+
+8.  Events Handling events in react 
+      * Synthetic events
+      * React event handler
+9. [Higher Order Compoent](#higher-order-compoent)
+
+10. HOOKS
+
+      * [UseState](#usestate)
+      * useEffect
+      * useRef
+      * React.memo()
+      * [useMemo](#usememo)
+      * UseCallback
+      * [useReducer](#usereducer)
+      * useParams hook
+      * How to make Custom Hooks
+
+11. [Routing](#routing)
+
+      * How to perform routing
+      * Brower router
+      * Routes
+      * Route
+      * Link
+      * [Dynamic params in Routing](#dynamic-params-in-routing)
+      * [useNavigate](#usenavigate)
+      * [useLocation](#uselocation)
+
+12. [Props drilling](#props-drilling)
+13. State uplifting
+14. [Context API](#context-api)
+    
+15. [Axio Vs Fetch](#axio-vs-fetch)
+      * Get, post, put,delete
+      * Fetch json file and show it in the screen
+      * Create own API and Fetch it and show on the screen
+      * Difference between axio and fetch
+16. State management
+      * [REDUX Toolkit](#redux-toolkit)
+      * perform CURD operation in redux
+      * Redux thunk 
+      * Redux saga vs Thunk
+
+
+
 
 ### Firstly understand What is backend development?
 
@@ -3241,7 +3339,6 @@ This Day 1 overview introduces you to the fundamentals of databases, compares SQ
 
 A Regular Expression (or Regex) is a pattern (or filter) that describes a set of strings that matches the pattern. In other words, a regex accepts a certain set of strings and rejects the rest.
 MongoDB provides the service to search for a pattern in a string using the regular expression during a query. It uses Perl compatible regular expressions (PCRE) version 8.42 and UTF-8 support. One can do pattern matching in MongoDB - with the $regex operator and without the $regex operator
-
 
 
 
